@@ -1,7 +1,7 @@
 {
   "name": "node-app-settings",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Store application settings in popular format like json, ini etc",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev",
@@ -9,8 +9,8 @@
     "build": "gulp",
     "prepublish": "gulp"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "woodstage",
+  "license": "Apache 2.0",
   "dependencies": {
     "bluebird": "^3.4.7",
     "ini": "^1.3.4"
