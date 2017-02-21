@@ -8,7 +8,7 @@ class GeneralSetting extends Setting{
     private readonly _ext: string = 'ini';
 
     constructor( filePath?: string ){
-        super(filePath);
+        super();
         if(filePath){
             this._filePath = filePath;
         }

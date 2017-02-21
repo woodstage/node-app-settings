@@ -3,11 +3,7 @@ abstract class Setting {
     _filePath: string;
     _config: Object = {};
 
-    constructor(filePath?: string) {
-        if(filePath){
-            this._filePath = filePath;
-        }
-    }
+    constructor() {}
 
     abstract init(): void;
     abstract flush(): void;

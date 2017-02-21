@@ -7,7 +7,7 @@ class JSONSetting extends Setting {
     private readonly _ext: string = 'json';
 
     constructor( filePath?: string ){
-        super(filePath);
+        super();
         if(filePath){
             this._filePath = filePath;
         }
