@@ -1,2 +1,4 @@
 src
 .gitignore
+gulpfile.js
+tsconfig.json
