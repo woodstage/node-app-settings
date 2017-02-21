@@ -1,10 +1,7 @@
-///<reference types="node" path="../typings/globals/node/index.d.ts"/>
-import * as fs from 'fs';
-
 abstract class Setting {
 
     _filePath: string;
-    _config: object = {};
+    _config: Object = {};
 
     constructor(filePath?: string) {
         if(filePath){
@@ -23,7 +20,7 @@ abstract class Setting {
         return this._config;
     }
 
-    set config(obj: Object): void {
+    set config(obj: Object) {
         this._config = obj;
     }
 }

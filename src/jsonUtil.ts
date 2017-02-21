@@ -1,4 +1,3 @@
-// <reference path="typings/globals/node/index.d.ts"/>
 import * as f from 'fs';
 import * as Promise from 'bluebird';
 

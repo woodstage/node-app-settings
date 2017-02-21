@@ -1,4 +1,3 @@
-// <reference path="typings/globals/node/index.d.ts"/>
 import JSONSetting from './JSONSetting';
 import * as path from 'path';
 

@@ -1,4 +1,3 @@
-// <reference path="typings/globals/node/index.d.ts"/>
 import * as fs from 'fs';
 import * as ini from 'ini';
 import Setting from './Setting';
