@@ -1,6 +1,14 @@
 # node-app-settings
 Store app settings
 
+[![](https://img.shields.io/travis/woodstage/node-app-settings.svg?style=flat-square)](https://travis-ci.org/woodstage/node-app-settings)
+[![Coveralls](https://img.shields.io/coveralls/woodstage/node-app-settings.svg?style=flat-square)](https://coveralls.io/github/woodstage/node-app-settings)
+
+
+[![npm package](https://img.shields.io/npm/v/node-app-settings.svg?style=flat-square)](https://www.npmjs.org/package/node-app-settings)
+[![NPM downloads](http://img.shields.io/npm/dm/node-app-settings.svg?style=flat-square)](https://npmjs.org/package/node-app-settings)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/woodstage/node-app-settings.svg)](http://isitmaintained.com/project/woodstage/node-app-settings "Average time to resolve an issue")
+
 ## Usage
 
 ```javascript
