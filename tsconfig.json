@@ -3,7 +3,16 @@
         "src/*.ts"
     ],
     "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "commonjs",
         "noImplicitAny": true,
+        "noLib": true,
+        "removeComments": false,
+        "sourceMap": true,
         "target": "es5"
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }
