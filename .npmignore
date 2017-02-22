@@ -2,3 +2,5 @@ src
 .gitignore
 gulpfile.js
 tsconfig.json
+.travis.yml
+mocha.opts
