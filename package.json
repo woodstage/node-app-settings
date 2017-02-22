@@ -1,11 +1,13 @@
 {
   "name": "node-app-settings",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Store application settings in popular format like json, ini etc",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node --compiler typescript src/index.ts",
     "dev": "gulp dev",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --opts mocha.opts",
+    "test:auto": "mocha --opts mocha.opts --watch",
     "build": "gulp",
     "prepublish": "gulp"
   },
@@ -16,12 +18,16 @@
     "ini": "^1.3.4"
   },
   "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
     "@types/node": "^4.0.22-alpha",
+    "chai": "^3.5.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-typescript": "^3.1.5",
-    "typescript": "^2.1.6",
-    "typings": "^2.1.0"
+    "mocha": "^3.2.0",
+    "ts-node": "^2.1.0",
+    "typescript": "^2.1.6"
   }
 }

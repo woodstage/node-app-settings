@@ -1,15 +1,18 @@
 {
     "files": [
-        "src/**.ts"
+        "src/*.ts",
+        "!src/*.spec.ts"
     ],
     "compilerOptions": {
         "strictNullChecks": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
-        "target": "es5"
+        "target": "es5",
+        "allowJs": true
     },
   "exclude": [
-      "node_modules"
+      "node_modules",
+      "src/*.spec.ts"
   ]
 }

@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import * as fs from 'fs';
 import Setting from './Setting';
 
@@ -16,7 +17,7 @@ class JSONSetting extends Setting {
     init(): void {
         try{
             let fd = fs.openSync(this._filePath, 'a+');
-            let jsonStr = fs.readFileSync(fd, { encoding: 'utf8' });
+            let jsonStr = fs.readFileSync(this._filePath, { encoding: 'utf8' });
             this._config = jsonStr ? JSON.parse(jsonStr) : {};
         }catch(err){
             throw err;

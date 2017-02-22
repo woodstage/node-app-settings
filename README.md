@@ -13,9 +13,16 @@ Store app settings
 
 ```javascript
 const appSettings = require('node-app-settings');
-let settings = appSettings.create('settings.json');
+let settings = appSettings.create('settings.json');//Absolute path or relative path
 let config = settings.config; //Get the setting data object
 config.user = 'Bob';
 config.password = 'xxx';
 settings.flush(); //Save to file
+
+//Or create a ini type setting
+let iniSettings = appSettings.create('settings.ini');
+//Or customized file name
+let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
+
+Current there are **json** and **ini** type are available.

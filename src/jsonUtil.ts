@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import * as f from 'fs';
 import * as Promise from 'bluebird';
 
