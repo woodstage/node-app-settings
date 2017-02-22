@@ -4,12 +4,12 @@
   "description": "Store application settings in popular format like json, ini etc",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node --compiler typescript src/index.ts",
+    "start": "npm run build",
+    "prepublish": "npm run build",
     "dev": "gulp dev",
     "test": "mocha --opts mocha.opts",
     "test:auto": "mocha --opts mocha.opts --watch",
-    "build": "gulp",
-    "prepublish": "gulp"
+    "build": "gulp"
   },
   "author": "woodstage",
   "license": "Apache 2.0",
