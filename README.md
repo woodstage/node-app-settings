@@ -21,7 +21,7 @@ settings.flush(); //Save to file
 
 //Or create a ini type setting
 let iniSettings = appSettings.create('settings.ini');
-//Or customized file name
+//Or customized file extension name
 let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
 
