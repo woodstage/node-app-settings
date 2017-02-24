@@ -6,7 +6,7 @@ var tsProject = ts.createProject("tsconfig.json");
 
 gulp.task("build-with-sourcemap", function() {
     return 
-        gulp.src(['src/*.ts','!src/*.spec.ts'])
+        gulp.src(['src/*.ts','!src/*.spec.ts', '!src/test.ts'])
         //.pipe(tsProject.src())
         .pipe(sourcemaps.init())
             .pipe(tsProject()).js
@@ -25,7 +25,7 @@ gulp.task("dev", function(){
 })
 
 gulp.task("default", ["clean"], function(){
-    return  gulp.src(['src/*.ts','!src/*.spec.ts'])
+    return  gulp.src(['src/*.ts','!src/*.spec.ts', '!src/test.ts'])
         //.pipe(tsProject.src())
         .pipe(tsProject()).js
         .pipe(gulp.dest("dist"));
