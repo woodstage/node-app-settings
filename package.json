@@ -1,6 +1,6 @@
 {
   "name": "node-app-settings",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Store application settings in popular format like json, ini etc",
   "main": "index.js",
   "scripts": {
