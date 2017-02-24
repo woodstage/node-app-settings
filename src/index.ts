@@ -4,8 +4,8 @@ import JSONSetting from './JSONSetting';
 import * as path from 'path';
 
 const TYPES = {
-  JSON: 'json',
-  GENERAL: 'ini'
+  JSON: 'JSON',
+  INI: 'INI'
 }
 
 export const create = (filePath: string, type: string = TYPES.JSON) => {
@@ -21,16 +21,15 @@ export const create = (filePath: string, type: string = TYPES.JSON) => {
     throw new Error(`Invalid file path ${filePath}`);
   }
   
-
-  if(!(type in TYPES)){
+  if(!(type.toUpperCase() in TYPES)){
     //throw new Error(`Invalid type ${type}`);
     console.warn(`Invalid setting file type ${type}, use file extension name ${extname} instead`);
     type = extname;
   }
-  switch(type){
+  switch(type.toUpperCase()){
     case TYPES.JSON:
       return new GeneralSetting(filePath);
-    case TYPES.GENERAL:
+    case TYPES.INI:
       return new GeneralSetting(filePath);
     default:
       console.info(`Create json type setting file for file extname ${type}`);
