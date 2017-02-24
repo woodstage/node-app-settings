@@ -12,6 +12,7 @@ class JSONSetting extends Setting {
         if(filePath){
             this._filePath = filePath;
         }
+        this.init();
     }
 
     init(): void {
