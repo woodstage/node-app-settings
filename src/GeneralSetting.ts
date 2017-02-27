@@ -25,11 +25,19 @@ class GeneralSetting extends Setting{
         }
     }
 
+	flush(callback: Function = (() => {})): void {
+		fs.writeFile(this._filePath, ini.stringify(this._config), callback);
+	}
+
     /*
      * Write current settings to file
      */
-    flush(): void {
-        fs.writeFileSync(this._filePath, ini.stringify(this._config));
+    flushSync(): void {
+		try{
+			fs.writeFileSync(this._filePath, ini.stringify(this._config));
+		}catch(err){
+			throw err;
+		}
     }
 }
 

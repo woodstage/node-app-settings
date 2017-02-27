@@ -17,7 +17,10 @@ let settings = appSettings.create('settings.json');//Absolute path or relative p
 let config = settings.config; //Get the setting data object
 config.user = 'Bob';
 config.password = 'xxx';
-settings.flush(); //Save to file
+settings.flush((err => {
+	console.log(err);
+})); //Save to file asynchronous
+settings.flushSync(); //Save to file
 
 //Or create a ini type setting
 let iniSettings = appSettings.create('settings.ini');
@@ -26,3 +29,5 @@ let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
 
 Current there are **json** and **ini** type are available.
+
+### Synchronous flush
