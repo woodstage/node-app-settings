@@ -28,6 +28,7 @@ let iniSettings = appSettings.create('settings.ini');
 let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
 
-Current there are **json** and **ini** type are available.
+Current **json** and **ini** are available.
 
-### Synchronous flush
+## LICENSE
+MIT
