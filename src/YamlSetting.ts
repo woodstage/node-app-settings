@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import * as fs from 'fs';
 import Setting from './Setting';
-import yaml from 'yaml';
+import yaml from 'js-yaml';
 
-class YamlSetting extends Setting {
+export default class YamlSetting extends Setting {
   _filePath: string = 'settings.yml';
   private readonly _ext: string = 'yml';
 
