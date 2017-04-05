@@ -9,6 +9,11 @@ Store app settings
 [![NPM downloads](http://img.shields.io/npm/dm/node-app-settings.svg?style=flat-square)](https://npmjs.org/package/node-app-settings)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/woodstage/node-app-settings.svg)](http://isitmaintained.com/project/woodstage/node-app-settings "Average time to resolve an issue")
 
+## Supported Types
+* JSON
+* INI
+* YAML
+
 ## Usage
 
 ```javascript
@@ -27,8 +32,6 @@ let iniSettings = appSettings.create('settings.ini');
 //Or customized file extension name
 let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
-
-Current **json** and **ini** are available.
 
 ## LICENSE
 MIT
