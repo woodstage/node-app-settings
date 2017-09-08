@@ -1,42 +1,51 @@
 /// <reference types="node" />
 import * as fs from 'fs';
 import Setting from './Setting';
-import yaml from 'js-yaml';
+//import yaml from 'js-yaml';
+let yaml = require('js-yaml');
 
-export default class YamlSetting extends Setting {
-  _filePath: string = 'settings.yml';
-  private readonly _ext: string = 'yml';
+class YamlSetting extends Setting {
 
-  constructor( filePath?: string ){
-    super();
-    if(filePath){
-    	this._filePath = filePath;
+    _filePath: string = 'settings.yml';
+    private readonly _ext: string = 'yml';
+
+    constructor( filePath?: string ){
+        super();
+        if(filePath){
+            this._filePath = filePath;
+        }
+        this.init();
     }
-    this.init();
-  }
 
-  init(): void {
-    try{
-      let fd = fs.openSync(this._filePath, 'a+');
-      let yamlStr = fs.readFileSync(this._filePath, { encoding: 'utf8' });
-      this._config = yamlStr ? yaml.safeLoad(yamlStr) : {};
-    }catch(err){
-      throw err;
+    init(): void {
+        try{
+            let fd = fs.openSync(this._filePath, 'a+');
+            var doc = yaml.safeLoad(fs.readFileSync(this._filePath, { encoding: 'utf8' }), null, /*json behaviour*/true);
+            this._config = doc || {};
+        }catch(err){
+            throw err;
+        }
     }
-  }
 
-	flush(callback: Function = (() => {})): void {
-		fs.writeFile(this._filePath, yaml.safeDump(this._config), callback);
-	}
+    /*
+     * Write current settings to file
+     */
+    flush(): void {
+        let str = yaml.safeDump(this._config, {});
+        fs.writeFileSync(this._filePath, str);
+    }
 
-  /*
-   * Write current settings to file
-   */
-  flushSync(): void {
-		try{
-		  fs.writeFileSync(this._filePath, yaml.safeDump(this._config));
-		}catch(err){
-	    throw err;
-		}
-  }
+    /*
+     * Write current settings to file
+     */
+    flushSync(): void {
+      try{
+        let str = yaml.safeDump(this._config, {});
+        fs.writeFileSync(this._filePath, str);
+      }catch(err){
+            throw err;
+      }
+    }
 }
+
+export default YamlSetting;

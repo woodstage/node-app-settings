@@ -1,6 +1,6 @@
-import * as path from 'path'
-import * as os from 'os'
-import * as settings from './index'
+import * as path from 'path';
+import * as os from 'os';
+import * as settings from './index';
 
 const homedir = os.homedir()
 const dir = path.join(homedir, 'test')

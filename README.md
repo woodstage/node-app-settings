@@ -16,8 +16,17 @@ Store app settings
 
 ## Usage
 
+You can create settings object by providing setting file path and type. If the file doesn't exist, a new file will be created on the path.
 ```javascript
 const appSettings = require('node-app-settings');
+
+let iniSetting = appSettings.create('settings.ini', 'INI');
+let jsonSetting = appSettings.create('settings.json', 'JSON');
+let yamlSetting = appSettings.create('settings.yml', 'YAML');
+```
+
+You can then get/update settings on the object. And if you want to store any settings, don't forget to call **flush** before exit.
+```javascript
 let settings = appSettings.create('settings.json');//Absolute path or relative path
 let config = settings.config; //Get the setting data object
 config.user = 'Bob';
@@ -26,11 +35,6 @@ settings.flush((err => {
 	console.log(err);
 })); //Save to file asynchronous
 settings.flushSync(); //Save to file
-
-//Or create a ini type setting
-let iniSettings = appSettings.create('settings.ini');
-//Or customized file extension name
-let mySettings = appSettings.create('settings.my', /* type */'json');
 ```
 
 ## LICENSE

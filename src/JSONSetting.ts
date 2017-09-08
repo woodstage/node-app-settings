@@ -25,9 +25,9 @@ class JSONSetting extends Setting {
         }
     }
 
-	flush(callback: Function = (() => {})): void {
-		fs.writeFile(this._filePath, JSON.stringify(this._config, null, 4), callback);
-	}
+  	flush(callback: Function = (() => {})): void {
+  		fs.writeFile(this._filePath, JSON.stringify(this._config, null, 4), callback);
+  	}
 
     /*
      * Write current settings to file
